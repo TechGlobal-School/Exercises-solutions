@@ -108,6 +108,24 @@ function maxOccurrences(str) {
 }
 
 // Removing Star
+function starOut(str) {
+    if(str.includes("*")){
+        let s = "";
+        for(let i = 0; i < str.length; i++){
+            if(i == 0){
+                if(str.charAt(i) != '*' && str.charAt(i+1) != '*') s += str.charAt(i);
+            }
+            else if(i == str.length-1){
+                if(str.charAt(i) != '*' && str.charAt(i-1) != '*') s += str.charAt(i);
+            }
+            else {
+                if(str.charAt(i-1) != '*' && str.charAt(i) != '*' && str.charAt(i+1) != '*') s += str.charAt(i);
+            }
+        }
+        return s;
+    }
+    return str;
+}
 
 // Roman to Number
 function romanToInt(romanNumeral) {
